@@ -1,5 +1,7 @@
 # **Project Proposal** #
-
+### ***By: Pratik Anand*** ###  
+ &nbsp;
+ 
 **1. The Big Idea**: 
 
 What is the main idea of your project? What topics will you explore and what will you generate? What is your minimum viable product? What is a stretch goal?
