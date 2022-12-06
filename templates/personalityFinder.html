@@ -1,0 +1,81 @@
+<html>
+
+<head>
+<section>
+  <!-- <img class="mySlides" src="/static/Vertical.jpg"
+  style="height:50%" style="width:100%">
+  </section>  -->
+   <h1> MBTI Personality finder </h1>
+   <p> This page shows your top 5 personalities with the gneerated match score based on your inputted text or link to a Twitter profile. </p>
+    <p> To submit another request, please click the "MBTI Personality Classifier" button <p>
+<p> 
+  Please be patient! The app might take a few minutes to run, especially for Twitter profiles since it has to parse through a lot of entries.
+</p>
+</head>
+
+</head>
+<body id="bg">
+<div class="navbar navbar-static-top">
+    <ul class="nav navbar-nav">
+        <li><h2><a href="{{ url_for('index') }}" id="navvy">MBTI Personality Classifier</a></h2></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+        <li><a href="{{ url_for('about') }}" style="margin-right:25px;font-size:18px;">About</a></li>
+    </ul>
+</div>
+
+<body>
+<style>
+.mySlides{
+  width: 80%;
+  height: 75%
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;  
+}
+
+.divider{
+    width:5px;
+    height:1px;
+    display:inline-block;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+</style>
+  <h2>Relevant personality types displayed below</h2>
+<table>
+  <tr>
+    <th>Type</th>
+    <th>Match Score</th>
+    <th>Search Term</th>
+    <th>Rank</th>
+    <th>Introversion/Extraversion</th>
+    <th>Intuitive/Observant</th>
+    <th>Thinking/Feeling</th>
+    <th>Judging/Perceiving</th>
+    
+</tr>  
+{% for doc in docs %}
+<tr>
+<td>{{doc["type"]}}</td>
+<td>{{doc["Match Score"]}}</td>
+<td>{{doc["Search Term"]}}</td>
+<td>{{doc["Rank"]}}</td>
+<td>{{doc["Introversion/Extraversion"]}}</td>
+<td>{{doc["Intuitive/Observant"]}}</td>
+<td>{{doc["Thinking/Feeling"]}}</td>
+<td>{{doc["Judging/Perceiving"]}}</td>
+
+</tr>
+{% endfor %}
+</table>
+
+
+</html>
